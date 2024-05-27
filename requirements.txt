@@ -1,0 +1,5 @@
+Django==5.0.6
+djangorestframework==3.11.0
+django-environ==0.4.5
+selenium==4.21.0
+behave==1.2.6
