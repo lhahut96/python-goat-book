@@ -9,7 +9,7 @@ def before_all(context):
 
 @when("we implement a test")
 def step_impl(context):
-    assert context.browser.title is "To-Do"
+    assert context.browser.title == "To-Do"
 
 
 def after_all(context):
