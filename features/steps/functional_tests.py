@@ -9,6 +9,7 @@ def before_all(context):
 
 @when("we implement a test")
 def step_impl(context):
+    context.browser.get("http://localhost:8000")
     print("title " + context.browser.title)
     assert "To-Do" in context.browser.title
 
