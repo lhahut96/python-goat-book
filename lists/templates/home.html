@@ -4,13 +4,21 @@
   </head>
   <body>
     <h1>Your To-Do list</h1>
-    <input id="id_new_item" placeholder="Enter a to-do item" />
+    <form method="POST">
+      <input name="id_text" id="id_new_item" placeholder="Enter a to-do item" />
+      {% csrf_token %}
+    </form>
     <table id="id_list_table">
+      {% comment %}
       <tr id="id_row_{{ row.id }}">
         <td>{{ row.text }}</td>
         <td>
           <button id="id_mark_{{ row.id }}">Mark as done</button>
         </td>
+      </tr>
+      {% endcomment %}
+      <tr>
+        <td>1: {{ new_item_text }}</td>
       </tr>
     </table>
   </body>
