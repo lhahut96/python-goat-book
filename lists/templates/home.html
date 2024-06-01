@@ -1,3 +1,17 @@
 <html>
-  <title>To-Do lists</title>
+  <head>
+    <title>To-Do lists</title>
+  </head>
+  <body>
+    <h1>Your To-Do list</h1>
+    <input id="id_new_item" placeholder="Enter a to-do item" />
+    <table id="id_list_table">
+      <tr id="id_row_{{ row.id }}">
+        <td>{{ row.text }}</td>
+        <td>
+          <button id="id_mark_{{ row.id }}">Mark as done</button>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
