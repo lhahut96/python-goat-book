@@ -22,6 +22,17 @@ def step_impl(context):
     inputbox = context.browser.find_element(By.ID, "id_new_item")
     assert inputbox.get_attribute("placeholder") == "Enter a to-do item"
 
+    inputbox.send_keys("Buy peacock feathers")
+    inputbox.send_keys(Keys.ENTER)
+    time.sleep(1)
+
+    table = context.browser.find_element(By.ID, "id_list_table")
+    rows = table.find_elements(By.TAG_NAME, "tr")
+
+    assert any(row.text == "1: Buy peacock feathers" for row in rows)
+
+    assert False, "Finish the test!"
+
 
 def after_all(context):
     context.browser.quit()
